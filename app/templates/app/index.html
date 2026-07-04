@@ -1,0 +1,21 @@
+{% extends 'app/boods.html' %}
+ 
+
+{% block title %} {{title}} {% endblock %}
+
+
+{% block content %} 
+    <h1>Tasks under</h1>
+
+    <!-- The logic of information output -->
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class="alert alert-warning mt-2">
+                <h3> {{el.title}} </h3>
+                <p>{{el.task}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>None of the tasks has been detected</p>
+    {% endif %}
+{% endblock %}

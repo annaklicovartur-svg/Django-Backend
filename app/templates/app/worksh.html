@@ -1,0 +1,22 @@
+{% extends 'app/boods.html' %}
+
+{% block title %} {{name}} {% endblock %}
+
+{% block content %} 
+
+<h1>Work statistic</h1>
+    {% if works %}
+        {% for el in works %}
+
+            <div class="alert alert-warning mt-5">
+                <h3> {{el.name}} </h3>
+                <p>selery: <br>{{el.selery}}</p>
+                <p>Are you happy: <br>{{el.isHappy}}</p>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p>No content</p>
+    {% endif %}
+
+{% endblock %}

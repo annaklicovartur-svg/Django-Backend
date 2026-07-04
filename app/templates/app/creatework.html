@@ -1,0 +1,20 @@
+{% extends 'app/boods.html' %}
+
+{% block title %}
+Create task
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    <!-- ADDED CSRF TOKEN -->
+        {% csrf_token %} 
+        {{ form.name }} <br>
+        {{ form.selery }} <br>
+        {{ form.isHappy }} <br>
+        
+        <button type="submit", class="btn btn-success">ADD</button> 
+        <span>{{ error }}</span>
+</form>
+
+{% endblock %}
